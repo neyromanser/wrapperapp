@@ -1,6 +1,6 @@
 package monitoring
 
-import "github.com/vladbpython/wrapperapp/monitoring/adapters"
+import "github.com/neyromanser/wrapperapp/monitoring/adapters"
 
 type ConfigMinotiring struct {
 	Use        bool                     `yaml:"use"`

@@ -1,6 +1,6 @@
 package wrapperapp
 
-import "github.com/vladbpython/wrapperapp/logging"
+import "github.com/neyromanser/wrapperapp/logging"
 
 type ConfigSystem struct {
 	AppName string         `yaml:"name" envconfig:"name" default:"WrapperApplication"`

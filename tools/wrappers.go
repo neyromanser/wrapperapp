@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/vladbpython/wrapperapp/helpers"
-	"github.com/vladbpython/wrapperapp/interfaces"
+	"github.com/neyromanser/wrapperapp/helpers"
+	"github.com/neyromanser/wrapperapp/interfaces"
 )
 
 func WrapFunc(fn interface{}, arguments ...interface{}) ([]reflect.Value, error) {

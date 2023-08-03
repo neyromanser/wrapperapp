@@ -3,7 +3,7 @@ package containers
 import (
 	"sync"
 
-	"github.com/vladbpython/wrapperapp/system"
+	"github.com/neyromanser/wrapperapp/system"
 )
 
 type SessionContainer struct {

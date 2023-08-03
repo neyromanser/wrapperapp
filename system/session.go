@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/vladbpython/wrapperapp/logging"
-	"github.com/vladbpython/wrapperapp/taskmanager"
-	"github.com/vladbpython/wrapperapp/tools"
+	"github.com/neyromanser/wrapperapp/logging"
+	"github.com/neyromanser/wrapperapp/taskmanager"
+	"github.com/neyromanser/wrapperapp/tools"
 )
 
 type Session struct {

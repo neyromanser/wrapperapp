@@ -6,17 +6,17 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/vladbpython/wrapperapp/validators"
+	"github.com/neyromanser/wrapperapp/validators"
 )
 
 const DefaultHost = "https://api.telegram.org/bot"
 
-//Структура модели состояния ответа бота
+// Структура модели состояния ответа бота
 type BotModelOk struct {
 	Ok bool `json:"ok"` // Статус успешного ответа от бота
 }
 
-//Структура модели информации бота
+// Структура модели информации бота
 type BotInfoModel struct {
 	ID                      int    `json:"id"`                          //Идентификатор
 	CanJoinGroups           bool   `json:"is_bot"`                      //Статус присоединения к группам
@@ -25,7 +25,7 @@ type BotInfoModel struct {
 	Username                string `json:"username"`                    // Имя пользователя
 }
 
-//Структура модели бота
+// Структура модели бота
 type BotModel struct {
 	BotModelOk              // модель состояния ответа бота
 	Result     BotInfoModel `json:"result"` //модели информации бота

@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vladbpython/wrapperapp/helpers"
-	loggining "github.com/vladbpython/wrapperapp/logging"
-	"github.com/vladbpython/wrapperapp/tools"
+	"github.com/neyromanser/wrapperapp/helpers"
+	loggining "github.com/neyromanser/wrapperapp/logging"
+	"github.com/neyromanser/wrapperapp/tools"
 )
 
 type TaskWrapper struct {
@@ -21,22 +21,22 @@ type TaskWrapper struct {
 	cancelCtx context.CancelFunc
 }
 
-//Инциализируем обертку для задачи
+// Инциализируем обертку для задачи
 func (t *TaskWrapper) Init() {
 	t.ctx, t.cancelCtx = tools.NewContextCancel(tools.ContextBackground())
 }
 
-//Устанавливаем/Изминяем статус обертки для задачи
+// Устанавливаем/Изминяем статус обертки для задачи
 func (t *TaskWrapper) ChangeStatus(status bool) {
 	t.Running = status
 }
 
-//Остонвливаем задачу
+// Остонвливаем задачу
 func (t *TaskWrapper) StopTask() {
 	t.cancelCtx()
 }
 
-//Событие при остановке задачи, читаем из канала
+// Событие при остановке задачи, читаем из канала
 func (t *TaskWrapper) OnStop() <-chan struct{} {
 	return t.ctx.Done()
 }
@@ -48,7 +48,7 @@ func (t *TaskWrapper) SendCallBack(data []interface{}) {
 	t.CallBack(data)
 }
 
-//Закрываем задачу
+// Закрываем задачу
 func (t *TaskWrapper) Clear() {
 	t.ChangeStatus(false)
 	t.ctx = nil
@@ -92,7 +92,7 @@ func (t *BackgroundTaskManager) GetAllTasks() map[string]*TaskWrapper {
 	return t.tasks
 }
 
-//Регистрируем задачу  и добавляем её в контейнер
+// Регистрируем задачу  и добавляем её в контейнер
 func (t *BackgroundTaskManager) registerTask(taskWrapper *TaskWrapper) {
 	getTask := t.GetTask(taskWrapper.Task.Name)
 	if getTask == nil {
@@ -145,7 +145,7 @@ func (t *BackgroundTaskManager) removeTask(taskName string) {
 	delete(t.tasks, taskName)
 }
 
-//Останавливаем и удаляем задачу из контейнера
+// Останавливаем и удаляем задачу из контейнера
 func (t *BackgroundTaskManager) RemoveTask(taskNames ...string) {
 	for _, taskName := range taskNames {
 		task := t.GetTask(taskName)

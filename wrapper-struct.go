@@ -1,8 +1,8 @@
 package wrapperapp
 
 import (
-	"github.com/vladbpython/wrapperapp/interfaces"
-	"github.com/vladbpython/wrapperapp/tools"
+	"github.com/neyromanser/wrapperapp/interfaces"
+	"github.com/neyromanser/wrapperapp/tools"
 )
 
 type WrapperStruct struct {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"github.com/vladbpython/wrapperapp/logging"
-	"github.com/vladbpython/wrapperapp/taskmanager"
+	"github.com/neyromanser/wrapperapp/logging"
+	"github.com/neyromanser/wrapperapp/taskmanager"
 )
 
 func NewLogger(config logging.Config) *logging.Logging {

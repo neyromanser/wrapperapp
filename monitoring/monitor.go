@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vladbpython/wrapperapp/interfaces"
-	"github.com/vladbpython/wrapperapp/monitoring/adapters"
+	"github.com/neyromanser/wrapperapp/interfaces"
+	"github.com/neyromanser/wrapperapp/monitoring/adapters"
 )
 
 type Monitoring struct {
